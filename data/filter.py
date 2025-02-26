@@ -11,7 +11,7 @@ MIN_REVIEWS = 500
 
 # input and output files
 infile = "data/amazon_reviews_us_Electronics_v1_00.tsv"
-outfile = "data/filtered/filtered_ electronics.tsv"
+outfile = "data/filtered/filtered_electronics.tsv"
 
 # columns to keep
 columns = ["review_id", "product_id", "product_title", "star_rating", "helpful_votes", "total_votes", "verified_purchase", "review_body"]
