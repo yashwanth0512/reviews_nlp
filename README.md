@@ -1,5 +1,5 @@
 # Amazon Review NLP Analysis 
-For the full project descripting, view **proposal.pdf**.
+For the full project description, view [**proposal.pdf**](https://github.com/afinn12/reviews_nlp/blob/main/proposal.pdf).
 
 
 ## Data
