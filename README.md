@@ -3,8 +3,7 @@ For the full project descripting, view **proposal.pdf**.
 
 
 ## Data
-The datasets used are sourced from [Kaggle](https://www.kaggle.com/datasets/cynthiarempel/amazon-us-customer-reviews-dataset?resource=download&select=amazon_reviews_us_Toys_v1_00.tsv). The raw datasets are stored in **/data**.
-
+The datasets used are sourced from [Kaggle](https://www.kaggle.com/datasets/cynthiarempel/amazon-us-customer-reviews-dataset?resource=download&select=amazon_reviews_us_Toys_v1_00.tsv). 
 
 ### Counts
 In the **/counts** directory, the product ID is recorded with the number of reviews associated with it. They are sorted in descending order. 
