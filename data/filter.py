@@ -2,6 +2,8 @@ import csv
 from tqdm import tqdm
 import sys
 from collections import defaultdict
+import argparse
+
 
 # allow large files
 csv.field_size_limit(sys.maxsize)
@@ -10,9 +12,16 @@ csv.field_size_limit(sys.maxsize)
 MIN_REVIEWS = 500
 
 # input and output files
-infile = "data/amazon_reviews_us_Electronics_v1_00.tsv"
-outfile = "data/filtered/filtered_electronics.tsv"
+parser = argparse.ArgumentParser()
+parser.add_argument('--infile', type=str, required=True, help='Input File (file.tsv)')
+parser.add_argument('--outfile', type=str, required=True, help='Output File (file.tsv)')
+args = parser.parse_args()
+input = args.infile
+output = args.outfile
 
+
+# infile = "data/amazon_reviews_multilingual_US_v1_00.tsv"
+# outfile = "data/filtered/filtered_multi.tsv"
 # columns to keep
 columns = ["review_id", "product_id", "product_title", "star_rating", "helpful_votes", "total_votes", "verified_purchase", "review_body"]
 
