@@ -218,7 +218,7 @@ def analyze_reviews(input_file, model_dir, model_name, output_file):
         f"Total Reviews: {total_reviews}\n\n"
 
         f"Average Positive Rate: {avg_pos:.5f}\n"
-        f"   Star Rating: {float(star_rating):.5f}\n"
+        f"   Star Rating: {star_rating}\n"
         f"   Star Prediction: {avg_pos*10/2:.5f}\n"
         f"      Error percentage: {error:.3f}%\n"
         f"Average Negative Rate: {avg_neg:.5f}\n\n"
@@ -258,8 +258,7 @@ def predict_emotion(text, tokenizer, model, device='cuda' if torch.cuda.is_avail
     probs = softmax(logits)
     return probs
 
-
-if __name__ == "__main__":
+def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--input', type=str, required=True, help='Path to input TSV review file')
     parser.add_argument('--model', type=str, default='prajjwal1/bert-mini', help='Base model to fine-tune')
@@ -270,3 +269,6 @@ if __name__ == "__main__":
     args = parser.parse_args()
     # init_model(args.input, args.model, args.model_dir)
     analyze_reviews(args.input, args.model_dir, args.model, args.output)
+
+if __name__ == "__main__":
+    main()
