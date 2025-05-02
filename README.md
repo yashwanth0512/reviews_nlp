@@ -20,9 +20,9 @@ This file outputs the counts and average ratings for any products with at least 
 This file extracts all of the rows for a given product. It keeps the previous 8 columns that were filtered by *filter.py* since it takes the output from that file as input and allows for easier product analysis. The output file is stored in **/data/extract.**
 
 ### How to preprocess the data
-To process the data, run *filter.py*, followed by *extract.py* (where the PRODUCT_ID variable corresponds to the product of interest). Then, sentiment_baseline can be run. 
+To process the data, run *filter.py*, followed by *extract.py*. Then, sentiment_baseline can be run. 
 
-To help identify products of interest, run *count.py* in no particular order. 
+To help identify products of interest, run *count.py* in no particular order. This is needed for sentiment_analysis as well as it contains each product's average star rating. 
 
 **PRODUCT_ID and output/input file names must be updated in the files.**
 
@@ -38,3 +38,13 @@ The (commented out) queries at the bottom can be used to identify cases where th
 ### Classification
 
 ### Summarization 
+
+## Sentiment Analysis
+Run : 
+```
+python .\sentiment_analysis.py --input input.csv --output output.csv --model_dir model_dir
+```
+The BERT-mini model was trained on review data from Kaggle and then used to predict the sentiment of reviews for a given product. The models are given preprocessed data files, which filter out unused columns and extract reviews for a specific product ID. Then, it outputs the individual reviews and overall product summaries. The individual reviews summary includes the original fields as well as fields such as the positive and negative sentiment scores, the predicted label, and whether it was correctly predicted for debugging and to allow additional postprocessing. The product summary contains the average positive/negative sentiments, the predicted star ratings, metrics, and emotional statistics.
+
+
+
